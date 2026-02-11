@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { parseKey } from "../lib/utils";
 
 /**
  * Open Library uses `{ type: "/type/datetime", value: "..." }` for dates.
@@ -23,9 +24,8 @@ export const textValueSchema = z
 /**
  * Typed key reference used throughout OL: `{ key: "/type/work" }`, `{ key: "/authors/OL123A" }`, etc.
  */
-export const typedKeySchema = z.object({
-	key: z.string(),
-});
+export const keySchema = z.string().transform(parseKey);
+export const typedKeySchema = z.object({ key: keySchema });
 
 /**
  * Link object used in author records and elsewhere.
