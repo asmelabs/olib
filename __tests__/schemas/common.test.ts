@@ -72,7 +72,7 @@ describe("schemas/common", () => {
 		test("parses a key reference", () => {
 			const result = typedKeySchema.parse({ key: "/authors/OL34184A" });
 
-			expect(result).toEqual({ key: "/authors/OL34184A" });
+			expect(result).toEqual({ key: "OL34184A" });
 		});
 
 		test("rejects missing key", () => {
