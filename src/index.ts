@@ -1,5 +1,6 @@
 export { createOpenLibraryClient } from "./client";
 export { UrlBuilder } from "./modules/cover.module";
+export { search } from "./modules/search.module";
 export type { OLibError, OLibErrorCode, Result } from "./result";
 export { err, ok } from "./result";
 export type { Author } from "./schemas/author.schema";
