@@ -33,24 +33,24 @@ pnpm add @asmelabs/olib
 ## Quick Start
 
 ```ts
-import { createOlibClien } from "@asmelabs/olib";
+import { createOpenLibraryClient } from "@asmelabs/olib";
 
-const ol = createOlibClien();
+const ol = createOpenLibraryClient();
 
 // Search for books
-const results = await ol.search("Fantastic Mr Fox");
+const results = await ol.search("Fantastic Mr Fox"); // #not implemented yet
 
 // Get a work by its Open Library ID
-const work = await ol.works.get("OL45804W");
+const work = await ol.works.get("OL45804W"); // #not implemented yet
 
 // Get an edition by ISBN
-const edition = await ol.editions.getByISBN("9780140328721");
+const edition = await ol.editions.getByISBN("9780140328721"); // #not implemented yet
 
 // Get an author
 const author = await ol.authors.get("OL34184A");
 
 // Build a cover image URL
-const coverUrl = ol.covers.book("9780140328721", "isbn", "M");
+const coverUrl = ol.covers.book("9780140328721").type("isbn").size("M").build();
 // => "https://covers.openlibrary.org/b/isbn/9780140328721-M.jpg"
 ```
 
@@ -65,14 +65,14 @@ const coverUrl = ol.covers.book("9780140328721", "isbn", "M");
 
 ## API Coverage
 
-| Module       | Endpoints                                | Status |
-| ------------ | ---------------------------------------- | ------ |
-| **Search**   | Books, Authors, Subjects                 | ✅     |
-| **Works**    | Get, Editions, Ratings, Bookshelves      | ✅     |
-| **Editions** | Get, by ISBN                             | ✅     |
-| **Authors**  | Get, Works                               | ✅     |
-| **Covers**   | Book covers, Author photos (URL builder) | ✅     |
-| **Subjects** | Get                                      | ✅     |
+| Module       | Endpoints                                | Status               |
+| ------------ | ---------------------------------------- | -------------------- |
+| **Search**   | Books, Authors, Subjects                 | #not implemented yet |
+| **Works**    | Get, Editions, Ratings, Bookshelves      | #not implemented yet |
+| **Editions** | Get, by ISBN                             | #not implemented yet |
+| **Authors**  | Get, Works                               | ✅                   |
+| **Covers**   | Book covers, Author photos (URL builder) | ✅                   |
+| **Subjects** | Get                                      | #not implemented yet |
 
 ## Docs
 
