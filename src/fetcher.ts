@@ -74,7 +74,7 @@ export async function fetchJson<T extends z.ZodType>(
 	if (!parsed.success) {
 		return err({
 			code: "PARSE_ERROR",
-			message: "Failed to parse JSON response",
+			message: "Response did not match expected schema",
 			cause: parsed.error,
 		});
 	}
