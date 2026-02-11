@@ -1,4 +1,11 @@
 import { z } from "zod";
+import {
+	DEFAULT_LIMIT,
+	DEFAULT_OFFSET,
+	MAX_LIMIT,
+	MIN_LIMIT,
+	MIN_OFFSET,
+} from "../lib/constants";
 import { parseKey } from "../lib/utils";
 
 /**
@@ -40,8 +47,8 @@ export const linkSchema = z.object({
  * Pagination input parameters schema.
  */
 export const paginationInputSchema = z.object({
-	limit: z.int().min(1).max(1_000).default(100),
-	offset: z.int().min(0).default(0),
+	limit: z.int().min(MIN_LIMIT).max(MAX_LIMIT).default(DEFAULT_LIMIT),
+	offset: z.int().min(MIN_OFFSET).default(DEFAULT_OFFSET),
 });
 
 export type PaginationInput = z.infer<typeof paginationInputSchema>;
