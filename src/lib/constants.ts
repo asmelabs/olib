@@ -1,6 +1,9 @@
+export const MIN_LIMIT = 1;
 export const DEFAULT_LIMIT = 100;
-export const DEFAULT_OFFSET = 0;
 export const MAX_LIMIT = 1000;
+
+export const MIN_OFFSET = 0;
+export const DEFAULT_OFFSET = 0;
 
 export const USER_AGENT = "@asmelabs/olib";
 
