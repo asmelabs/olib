@@ -1,4 +1,5 @@
 import { AuthorModule } from "./modules/author.module";
+import { CoverModule } from "./modules/cover.module";
 
 /**
  * The main client for interacting with the Open Library API.
@@ -20,6 +21,7 @@ import { AuthorModule } from "./modules/author.module";
  */
 export class OpenLibrary {
 	readonly authors: AuthorModule;
+	readonly covers: CoverModule;
 
 	static create(): OpenLibrary {
 		return new OpenLibrary();
@@ -27,6 +29,7 @@ export class OpenLibrary {
 
 	private constructor() {
 		this.authors = AuthorModule.create();
+		this.covers = CoverModule.create();
 	}
 }
 
