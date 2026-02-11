@@ -35,3 +35,28 @@ export const linkSchema = z.object({
 	url: z.string(),
 	type: typedKeySchema.optional(),
 });
+
+/**
+ * Pagination input parameters schema.
+ */
+export const paginationInputSchema = z.object({
+	limit: z.int().min(1).max(1_000).default(100),
+	offset: z.int().min(0).default(0),
+});
+
+export type PaginationInput = z.infer<typeof paginationInputSchema>;
+
+/**
+ * Pagination output parameters schema.
+ */
+export const paginationOutputSchema = <T extends z.ZodType>(doc: T) =>
+	z.object({
+		docs: doc.array(),
+		start: z.int(),
+		numFound: z.int(),
+		numFoundExact: z.boolean(),
+	});
+
+export type PaginationOutput<T> = z.infer<
+	ReturnType<typeof paginationOutputSchema<z.ZodType<T>>>
+>;

@@ -1,16 +1,35 @@
+import { AuthorModule } from "./modules/author.module";
+
 /**
  * The main client for interacting with the Open Library API.
  *
  * @example
  * ```ts
- * import { OpenLibrary } from "@asmelabs/olib";
+ * import { createOpenLibraryClient } from "@asmelabs/olib";
  *
- * const ol = new OpenLibrary();
- * const result = await ol.works.get("OL45804W");
+ * const ol = createOpenLibraryClient();
+ * const author = await ol.authors.get("OL234664A");
  *
- * if (result.data) {
- *   console.log(result.data.title);
+ * if(author.error) {
+ *  // do something with the error
+ *  return;
  * }
+ *
+ * console.log(author.data); // type safe author object
  * ```
  */
-export class OpenLibrary {}
+export class OpenLibrary {
+	readonly authors: AuthorModule;
+
+	static create(): OpenLibrary {
+		return new OpenLibrary();
+	}
+
+	private constructor() {
+		this.authors = AuthorModule.create();
+	}
+}
+
+export function createOpenLibraryClient(): OpenLibrary {
+	return OpenLibrary.create();
+}
