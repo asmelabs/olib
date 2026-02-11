@@ -1,0 +1,45 @@
+schemas:
+  - changed-files:
+      - any-glob-to-any-file: "src/schemas/**"
+
+endpoints:
+  - changed-files:
+      - any-glob-to-any-file: "src/endpoints/**"
+
+types:
+  - changed-files:
+      - any-glob-to-any-file: "src/types/**"
+
+core:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "src/client.ts"
+          - "src/index.ts"
+
+utils:
+  - changed-files:
+      - any-glob-to-any-file: "src/utils/**"
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file: "__tests__/**"
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.md"
+          - "docs/**"
+          - "LICENSE"
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**"
+          - "biome.json"
+          - "tsconfig.json"
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "package.json"
+          - "bun.lock"
