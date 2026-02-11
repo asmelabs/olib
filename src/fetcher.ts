@@ -1,8 +1,6 @@
 import type { z } from "zod";
+import { BASE_URL, USER_AGENT } from "./lib/constants";
 import { err, type OLibError, ok, type Result } from "./result";
-
-const BASE_URL = "https://openlibrary.org";
-const USER_AGENT = "@asmelabs/olib";
 
 function errorFromStatus(status: number, url: string): OLibError {
 	if (status === 404) {
