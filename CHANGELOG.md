@@ -1,5 +1,13 @@
 # @asmelabs/olib
 
+## 0.2.0
+
+### Minor Changes
+
+- [#8](https://github.com/asmelabs/olib/pull/8) [`9f83d46`](https://github.com/asmelabs/olib/commit/9f83d4670489693a46a3f0d6b553a294f6087a79) Thanks [@mehdiasadli](https://github.com/mehdiasadli)! - Add cover module with fluent url builder for both authors and books, supporting different key types, sizes etc.
+
+- [#10](https://github.com/asmelabs/olib/pull/10) [`cd1877b`](https://github.com/asmelabs/olib/commit/cd1877bed520652e74c939463a6a2af8616f8e77) Thanks [@mehdiasadli](https://github.com/mehdiasadli)! - Add search module. It can search through books, works, editions, etc.
+
 ## 0.1.0
 
 ### Minor Changes
