@@ -1,3 +1,4 @@
+import { COVERS_BASE_URL } from "../lib/constants";
 import type {
 	CoverKeyType,
 	CoverResource,
@@ -5,8 +6,6 @@ import type {
 } from "../schemas/cover-schema";
 
 export class UrlBuilder {
-	private readonly baseUrl = "https://covers.openlibrary.org";
-
 	private _key: string | number;
 	private _keyType: CoverKeyType = "id";
 	private _size: CoverSize = "M";
@@ -37,7 +36,7 @@ export class UrlBuilder {
 			return null;
 		}
 
-		return `${this.baseUrl}/${this._resource}/${this._keyType}/${this._key}-${this._size}.jpg`;
+		return `${COVERS_BASE_URL}/${this._resource}/${this._keyType}/${this._key}-${this._size}.jpg`;
 	}
 }
 
