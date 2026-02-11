@@ -4,7 +4,7 @@ import type {
 	CoverSize,
 } from "../schemas/cover-schema";
 
-class UrlBuilder {
+export class UrlBuilder {
 	private readonly baseUrl = "https://covers.openlibrary.org";
 
 	private _key: string | number;
